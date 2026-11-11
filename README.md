@@ -23,6 +23,8 @@ Karmaşık kurumsal ağlarda ("istemci → switch → firewall → proxy → SSL
 
 ### Ekran görüntüleri
 
+*Tüm görüntülerdeki sunucu adları, IP adresleri ve bulgular tamamen uydurma örnek verilerdir.*
+
 | Ağ yolu topolojisi | Süre çizelgesi |
 |---|---|
 | ![Topoloji](screenshots/topology.png) | ![Süre çizelgesi](screenshots/timeline.png) |
@@ -30,6 +32,10 @@ Karmaşık kurumsal ağlarda ("istemci → switch → firewall → proxy → SSL
 | Uygulama katmanı (L7) tespiti | Servis portu taraması |
 |---|---|
 | ![L7 tespiti](screenshots/l7-detection.png) | ![Servis portları](screenshots/service-ports.png) |
+
+**Özet / Bulgular sekmesi — örnek analiz yorumu:**
+
+![Özet / Bulgular](screenshots/summary-findings.png)
 
 ### Mimari ilkeleri
 
@@ -73,6 +79,8 @@ In complex corporate networks (client → switch → firewall → proxy → SSL-
 - **Application-layer (L7) rejection** — when a TCP port is open but the application itself refuses real traffic
 - **Devices along the network path** — brand/model inference via traceroute + SNMP/MAC fingerprinting
 - **Service port scanning** — scan common enterprise services (Active Directory/LDAP, DNS, MSSQL, MySQL, Oracle, PostgreSQL, Redis, SMTP, RDP, SSH, WinRM, SMB) in a single click, using a single analysis credit
+
+*All server names, IP addresses, and findings shown in the screenshots above are entirely fictional sample data.*
 
 ### Architecture principles
 
