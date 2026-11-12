@@ -73,6 +73,8 @@ Uygulama kişisel veri toplamaz/göndermez. Detaylar için [Gizlilik Politikası
 
 ---
 
+<a id="english"></a>
+
 ## 🇬🇧 English
 
 ### What problem does it solve?
@@ -88,9 +90,17 @@ In complex corporate networks (client → switch → firewall → proxy → SSL-
 - **Devices along the network path** — brand/model inference via traceroute + SNMP/MAC fingerprinting
 - **Service port scanning** — scan common enterprise services (Active Directory/LDAP, DNS, MSSQL, MySQL, Oracle, PostgreSQL, Redis, SMTP, RDP, SSH, WinRM, SMB) in a single click, using a single analysis credit
 
+| Network path topology | Timeline |
+|---|---|
+| ![Topology](screenshots/topology.png) | ![Timeline](screenshots/timeline.png) |
+
+| Application-layer (L7) detection | Service port scan |
+|---|---|
+| ![L7 detection](screenshots/l7-detection.png) | ![Service ports](screenshots/service-ports.png) |
+
 **Path (Hop) & Asymmetry tab: does the traffic come back the same way it went?**
 
-![Asymmetry](screenshots/asymmetry.png)
+![Asymmetry](screenshots/asymmetry-en.png)
 
 The blue column is how many hops the packet took on the way out (7 here). The orange column is our estimate of how many hops the reply took on the way back, worked out from the TTL of the reply packet. For the first three hops both are the same, so the path is symmetric. At hop 4 the outbound count is 4 but the return count jumps to 7, which means the reply is coming back over a different, longer route. That's asymmetric routing.
 
