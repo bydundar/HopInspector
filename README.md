@@ -2,7 +2,7 @@
 
 **Kurumsal ağlarda gecikme, darboğaz ve asimetri teşhis aracı** — tek `.exe`, kurulum yok, yönetici hakkı gerekmez.
 
-🇹🇷 Türkçe açıklama aşağıda, 🇬🇧 **[English description below](#english)**.
+Türkçe açıklama aşağıda, **[English description below](#english)**.
 
 ---
 
