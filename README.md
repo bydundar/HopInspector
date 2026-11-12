@@ -37,6 +37,15 @@ Karmaşık kurumsal ağlarda ("istemci → switch → firewall → proxy → SSL
 
 ![Özet / Bulgular](screenshots/summary-findings.png)
 
+**Yol (Hop) ve Asimetri sekmesi — gidiş ve dönüş yolu farkı:**
+
+![Asimetri](screenshots/asymmetry.png)
+
+- 🔵 **Gidiş hop sayısı:** "TTL" sütunu. Paket hedefe burada 7 adımda ulaşmış.
+- 🟠 **Dönüş hop sayısı:** "Dönüş hop" sütunu; cevabın TTL değerinden tahmin edilir (burada 1, 2, 3, 7, 9, 10, 11).
+- 🔴 **Ayrışma noktası:** Hop 1–3'te gidiş ve dönüş aynıdır. Hop 4'te gidiş 4 iken dönüş 7'ye sıçrar; cevap farklı ve daha uzun bir yoldan dönüyor demektir (**asimetrik yönlendirme**).
+- Dönüşte hangi cihazlardan geçildiği doğrudan görülemez; hop sayısı farkından çıkarım yapılır. Kesinleştirmek için karşı uçtan da iz alınması önerilir.
+
 ### Mimari ilkeleri
 
 - **Tek `.exe`** — kurulum yok, kayıt defterine (registry) yalnızca lisans bilgisi yazar
@@ -79,6 +88,15 @@ In complex corporate networks (client → switch → firewall → proxy → SSL-
 - **Application-layer (L7) rejection** — when a TCP port is open but the application itself refuses real traffic
 - **Devices along the network path** — brand/model inference via traceroute + SNMP/MAC fingerprinting
 - **Service port scanning** — scan common enterprise services (Active Directory/LDAP, DNS, MSSQL, MySQL, Oracle, PostgreSQL, Redis, SMTP, RDP, SSH, WinRM, SMB) in a single click, using a single analysis credit
+
+**Path (Hop) & Asymmetry tab — forward vs. return path:**
+
+![Asymmetry](screenshots/asymmetry.png)
+
+- 🔵 **Forward hop count:** the "TTL" column. Here the packet reaches the target in 7 hops.
+- 🟠 **Return hop count:** the "Dönüş hop" (return hop) column, estimated from the reply TTL (here 1, 2, 3, 7, 9, 10, 11).
+- 🔴 **Divergence point:** for hops 1–3 forward and return match. At hop 4 forward is 4 but return jumps to 7, meaning the reply comes back over a different, longer path (**asymmetric routing**).
+- The devices traversed on the return path cannot be seen directly; this is inferred from the hop-count difference. Taking a trace from the other end confirms it.
 
 *All server names, IP addresses, and findings shown in the screenshots above are entirely fictional sample data.*
 
